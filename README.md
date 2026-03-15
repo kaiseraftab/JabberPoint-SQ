@@ -103,6 +103,6 @@ The GitHub Actions pipeline runs automatically on every push:
 Pipeline file: `.github/workflows/ci-cd.yml`
 
 ## Code Coverage
-Target: **70%+ line coverage** (enforced by JaCoCo)
+Target: **75%+ line coverage** (enforced by JaCoCo)
 
 View coverage report: `target/site/jacoco/index.html` (after running `mvn test`)
