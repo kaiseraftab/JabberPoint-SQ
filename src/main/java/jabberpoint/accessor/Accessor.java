@@ -1,3 +1,7 @@
+package jabberpoint.accessor;
+
+import jabberpoint.model.Presentation;
+
 import java.io.IOException;
 
 /**
