@@ -6,7 +6,10 @@ import java.awt.Graphics;
 import java.awt.image.ImageObserver;
 
 // SRP: SlideItem only holds data, rendering is delegated to DrawStrategy
-// Strategy pattern: draw() and getBoundingBox() delegate to strategy object
+// DIP: Depends on DrawStrategy interface, not concrete rendering classes.
+// Rendering algorithm injected through constructor.
+// LSP: TextItem and BitmapItem can substitute SlideItem anywhere.
+// Slide.draw() works with any SlideItem subclass without knowing the type.
 public abstract class SlideItem {
 	private int level = 0;
 	protected DrawStrategy drawStrategy;

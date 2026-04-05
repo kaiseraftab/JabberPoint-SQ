@@ -16,7 +16,8 @@ import java.io.IOException;
  * @version 1.5 2010/03/03 Sylvia Stuurman
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
-
+// LSP: XMLAccessor and DemoPresentation can be used interchangeably
+// wherever Accessor is expected. Both correctly implement loadFile/saveFile.
 public abstract class Accessor {
 	public static final String DEMO_NAME = "Demonstration presentation";
 	public static final String DEFAULT_EXTENSION = ".xml";
