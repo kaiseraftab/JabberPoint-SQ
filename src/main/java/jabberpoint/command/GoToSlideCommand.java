@@ -1,9 +1,8 @@
 package jabberpoint.command;
 
 import jabberpoint.model.Presentation;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Frame;
+import javax.swing.JOptionPane;
 
 // Command pattern: concrete command with Presentation as receiver
 public class GoToSlideCommand implements Command {

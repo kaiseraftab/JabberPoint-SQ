@@ -1,21 +1,24 @@
 package jabberpoint.accessor;
 
 import jabberpoint.factory.SlideItemFactory;
-import jabberpoint.model.*;
+import jabberpoint.model.BitmapItem;
+import jabberpoint.model.Presentation;
+import jabberpoint.model.Slide;
+import jabberpoint.model.SlideItem;
+import jabberpoint.model.TextItem;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Vector;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 // DIP: Depends on SlideItemFactory interface, not concrete item classes
 // OCP: New item types don't require changes to this class

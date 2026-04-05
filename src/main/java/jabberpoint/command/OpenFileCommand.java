@@ -3,10 +3,9 @@ package jabberpoint.command;
 import jabberpoint.accessor.Accessor;
 import jabberpoint.accessor.XMLAccessor;
 import jabberpoint.model.Presentation;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Frame;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 // Command pattern: concrete command with Accessor as receiver (per instructor feedback)
 public class OpenFileCommand implements Command {

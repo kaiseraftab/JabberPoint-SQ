@@ -4,12 +4,11 @@ import jabberpoint.command.Command;
 import jabberpoint.controller.KeyController;
 import jabberpoint.controller.MenuController;
 import jabberpoint.model.Presentation;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Map;
+import javax.swing.JFrame;
 
 // SRP: SlideViewerFrame only sets up the window and wires components together
 public class SlideViewerFrame extends JFrame {
