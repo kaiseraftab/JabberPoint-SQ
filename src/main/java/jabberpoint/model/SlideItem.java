@@ -1,41 +1,36 @@
 package jabberpoint.model;
 
+import jabberpoint.strategy.DrawStrategy;
 import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.image.ImageObserver;
 
-/** <p>The abstract class for an item on a slide<p>
- * <p>All SlideItems have drawingfunctionality.</p>
- * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
- * @version 1.1 2002/12/17 Gert Florijn
- * @version 1.2 2003/11/19 Sylvia Stuurman
- * @version 1.3 2004/08/17 Sylvia Stuurman
- * @version 1.4 2007/07/16 Sylvia Stuurman
- * @version 1.5 2010/03/03 Sylvia Stuurman
- * @version 1.6 2014/05/16 Sylvia Stuurman
-*/
-
+// SRP: SlideItem only holds data, rendering is delegated to DrawStrategy
+// Strategy pattern: draw() and getBoundingBox() delegate to strategy object
 public abstract class SlideItem {
-	private int level = 0; // level of the slideitem
+	private int level = 0;
+	protected DrawStrategy drawStrategy;
 
-	public SlideItem(int lev) {
-		level = lev;
+	public SlideItem(int level, DrawStrategy strategy) {
+		this.level = level;
+		this.drawStrategy = strategy;
 	}
 
 	public SlideItem() {
-		this(0);
+		this(0, null);
 	}
 
-// Give the level
 	public int getLevel() {
 		return level;
 	}
 
-// Give the bounding box
-	public abstract Rectangle getBoundingBox(Graphics g, 
-			ImageObserver observer, float scale, Style style);
+	// Strategy pattern: delegate drawing to strategy
+	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style style) {
+		return drawStrategy.getBoundingBox(g, observer, scale, style);
+	}
 
-// Draw the item
-	public abstract void draw(int x, int y, float scale, 
-			Graphics g, Style style, ImageObserver observer);
+	// Strategy pattern: delegate drawing to strategy
+	public void draw(int x, int y, float scale, Graphics g, Style style, ImageObserver observer) {
+		drawStrategy.draw(x, y, scale, g, style, observer);
+	}
 }
